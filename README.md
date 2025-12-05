@@ -80,10 +80,10 @@ Every encrypted file includes a cryptographic hash of the original plaintext, en
   - RSA-4096: Public key encryption with hybrid mode
 
 - **QR Code Support**
-  - Readable QR: up to 1200 bytes (~1.2 KB)
-  - Single QR: up to 2953 bytes (~2.95 KB) [Version 40]
-  - Multi-QR: up to 0.2 MB [2600-byte chunks]
- 
+  - Single QR: up to ~2.9 KB (encrypted data, after compression)
+  - Multi-QR: up to 0.2 MB (automatic chunking with 2600-byte chunks)
+  - Readable QR: up to 1200 bytes (NONE mode, unencrypted)
+
 - **Cross-Platform**
   - Windows, Linux, macOS
   - Headless SSH support
@@ -263,11 +263,12 @@ See `INSTALLATION.md` for detailed platform instructions.
 
 | Encryption | Single QR | Multi-QR | Notes |
 |------------|-----------|----------|-------|
-| NONE | 500 chars | N/A | Readable by any scanner |
-| AES-256 | 1200 bytes | 0.2 MB | After gzip compression |
-| RSA-4096 | 1200 bytes | 0.2 MB | After gzip compression |
+| NONE | 1200 bytes | N/A | Readable by any scanner (no encryption) |
+| AES-256 | 2.9 KB | 0.2 MB | After gzip compression and base64 encoding |
+| RSA-4096 | 2.9 KB | 0.2 MB | After gzip compression and base64 encoding |
 
 Multi-part QR codes are automatically:
+- Chunked at 2600 bytes per QR code
 - Numbered (1/5, 2/5, etc.)
 - Checksummed for integrity
 - Can be scanned in any order
@@ -326,7 +327,7 @@ MIT License
 
 ## 👤 Author
 
-Mariano Peluso
+Mariano
 
 ---
 
