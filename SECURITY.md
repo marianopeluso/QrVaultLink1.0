@@ -268,10 +268,10 @@ Sensitive hash comparisons use `hmac.compare_digest()`:
 
 QRVaultLink generates QR codes with specific capacity constraints:
 
-- **Single QR Maximum:** ~2.9 KB (Version 40 QR code)
-- **Smartphone-Scannable:** ~500 characters (recommended for mobile scanning)
-- **Multi-QR Support:** Files larger than single QR capacity are split across multiple codes
-- **Chunk Size:** 1200 bytes per chunk for optimal reliability and scanning
+- **Single QR Maximum:** ~2.9 KB (encrypted data, after compression)
+- **Readable (NONE mode):** 1200 bytes (unencrypted, no compression)
+- **Multi-QR Support:** Files up to 0.2 MB (200 KB) are automatically split across multiple QR codes
+- **Chunk Size:** 2600 bytes per QR code (includes header)
 
 ### QR Code Data Encoding
 
@@ -354,6 +354,7 @@ This software uses cryptographic functions. Some countries may have restrictions
 
 - [Installation Guide](./INSTALLATION.md)
 - [Quick Start Guide](./README.md)
+- [Changelog](./CHANGELOG.md)
 - [Python Cryptography Library](https://cryptography.io/)
 - [NIST Cryptographic Standards](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines/)
 - [QR Code Standard](https://www.iso.org/standard/62952.html)
@@ -405,4 +406,4 @@ Subscribe to repository notifications to stay informed.
 **Last Updated:** 2025-12-05  
 **Version:** 1.0  
 **Status:** Security Review Completed  
-**Contact:** mariano@peluso.me
+
