@@ -168,21 +168,21 @@ The application presents a 6-option menu:
 **NONE (No Encryption)**
 - Readable by any QR scanner
 - Useful for non-sensitive data sharing
-- Capacity: ~500 characters, up to 2.9 KB with QR v40
+- Capacity: 1200 bytes (readable QR limit)
 
 **AES-256-GCM (Password-Based)**
 - Military-grade authenticated encryption
 - Password must be 8+ chars with 2+ character types
 - PBKDF2 with 600,000 iterations
 - Each operation uses random salt/IV
-- Capacity: ~1200 bytes per QR (after compression)
+- Capacity: ~2.9 KB per QR (after compression)
 
 **RSA-4096 (Public Key)**
 - Asymmetric encryption
 - Hybrid: RSA encrypts AES key, AES encrypts data
 - Public key can be shared safely
 - Only private key owner can decrypt
-- Capacity: ~1200 bytes per QR (after compression)
+- Capacity: ~2.9 KB per QR (after compression)
 
 ### Security Features
 - No plaintext stored to disk
