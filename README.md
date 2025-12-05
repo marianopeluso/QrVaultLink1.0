@@ -80,10 +80,10 @@ Every encrypted file includes a cryptographic hash of the original plaintext, en
   - RSA-4096: Public key encryption with hybrid mode
 
 - **QR Code Support**
-  - Single QR: up to ~2.9 KB
-  - Multi-QR: up to 0.2 MB (automatic chunking with 1200-byte chunks)
-  - Readable QR: up to ~500 characters
-
+  - Readable QR: up to 1200 bytes (~1.2 KB)
+  - Single QR: up to 2953 bytes (~2.95 KB) [Version 40]
+  - Multi-QR: up to 0.2 MB [2600-byte chunks]
+ 
 - **Cross-Platform**
   - Windows, Linux, macOS
   - Headless SSH support
