@@ -327,7 +327,7 @@ MIT License
 
 ## 👤 Author
 
-Mariano
+Mariano Peluso
 
 ---
 
